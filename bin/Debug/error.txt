@@ -1,0 +1,192 @@
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
+select rtc.TC001+'-'+rtc.TC002 as pur_code,--採購單單頭 usr_code =>TC011
+                                              rtc.TC004 as sup_code,rtc.TC003 as pur_date,
+                                              '00' as pur_status,'已核准' as erp_status,'0000' as pur_version,
+											  case when rtc.TC011 ='' then rtc.CREATOR else rtc.TC011 end as usr_code,
+											  rta.TA004 as dep_code,
+											  case when rtc.TC021 ='' then '.' else rtc.TC021 end  as ls_add,
+											  rtc.TC052 as ls_man, snk.NK002 as tra_cond,sna.NA003 as rec_cond,
+                                              case when snm.NM002 ='' then snm.NM001 else snm.NM002 end as inv_no,
+                                              snn.NN002 as tax_type,rtc.TC026 as tax_rate,rtc.TC005 as cur_type,
+                                              rtc.TC019 as pur_amount,rtc.TC020 as pur_tax
+                                          
+                                              from PURTC rtc 
+	                                                  left join PURTG rtg on rtc.TC002 = rtg.TG002
+	                                                  left join PURTA rta on rtc.TC002 = rta.TA002
+	                                                  left join CMSNN snn on rtc.TC047 = snn.NN001
+	                                                  left join CMSNK snk on rtc.TC048 = snk.NK001
+	                                                  left join CMSNM snm on rtg.TG009 = snm.NM001
+													  left join CMSNA sna on rtc.TC027 = sna.NA002
+                                          
+                                              where rtc.TC001+'-'+rtc.TC002 
+	                                                  in (select c.TD001+'-'+c.TD002 from PURTD c where  c.TD016='N') 
+	                                                  and rtc.TC014='Y' and rtc.TC030 ='3' --未結案、以確認、已核准 
+
+                                        
